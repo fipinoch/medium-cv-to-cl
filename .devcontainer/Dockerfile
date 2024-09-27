@@ -43,3 +43,9 @@ RUN apt-get -y install python3-pip
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
+
+# Install git.
+RUN apt-get update && apt-get install -y git
+
+# Install openssh-client to use local ssh files.
+RUN apt-get update && apt-get install -y openssh-client
